@@ -68,7 +68,7 @@ This schema illustrates what we want to deploy:
 
 ### Pod
 
-`pod.yml` describes the (pod)[http://kubernetes.io/v1.1/docs/user-guide/pods.html] we are about to create.
+`pod.yml` describes the [pod](http://kubernetes.io/v1.1/docs/user-guide/pods.html) we are about to create.
 
 Inside the pod we have just a container, which will be created from the image we have built on the [previous exercise](../0_stacksmith/). The image has been uploaded to the project registry (_gcr.io/kubernetes-ws-0/hello-world-node_), so anyone can download it.
 

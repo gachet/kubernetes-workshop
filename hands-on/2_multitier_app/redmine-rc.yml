@@ -15,17 +15,11 @@ spec:
     spec:
       containers:
         - name: redmine
-          image: gcr.io/kubernetes-ws-0/redmine-basic
+          image: bitnami/redmine
           env:
-            - name: REDMINE_SESSION_TOKEN
-              value: SUPERLONGANDSECRETSESSIONTOKENFORTHISAPP
-            - name: DATABASE_HOST
+            - name: MARIADB_HOST
               value: db
-            - name: DATABASE_NAME
-              value: redmine_production
-            - name: DATABASE_USER
-              value: redmine
-            - name: DATABASE_PASSWORD
+            - name: MARIADB_PASSWORD
               value: secretpassword
           ports:
             - containerPort: 3000

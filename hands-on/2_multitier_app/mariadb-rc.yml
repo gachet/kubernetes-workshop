@@ -10,6 +10,7 @@ spec:
     name: mariadb
   template:
     metadata:
+      name: mariadb
       labels:
         name: mariadb
     spec:
@@ -19,10 +20,6 @@ spec:
           args:
             - --max_connect_errors=1000
           env:
-            - name: MARIADB_DATABASE
-              value: redmine_production
-            - name: MARIADB_USER
-              value: redmine
             - name: MARIADB_PASSWORD
               value: secretpassword
           ports:

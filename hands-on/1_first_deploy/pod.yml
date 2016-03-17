@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: express
-      image: gcr.io/kubernetes-ws-0/hello-world-node
+      image: gcr.io/bitnami-charts-testing/hello-world-node
       ports:
         - containerPort: 3000

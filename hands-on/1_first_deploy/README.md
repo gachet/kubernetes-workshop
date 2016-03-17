@@ -68,9 +68,9 @@ This schema illustrates what we want to deploy:
 
 ### Pod
 
-`pod.yml` describes the (pod)[http://kubernetes.io/v1.1/docs/user-guide/pods.html] we are about to create.
+`pod.yml` describes the [pod](http://kubernetes.io/v1.1/docs/user-guide/pods.html) we are about to create.
 
-Inside the pod we have just a container, which will be created from the image we have built on the [previous exercise](../0_stacksmith/). The image has been uploaded to the project registry (_gcr.io/kubernetes-ws-0/hello-world-node_), so anyone can download it.
+Inside the pod we have just a container, which will be created from the image we have built on the [previous exercise](../0_stacksmith/). The image has been uploaded to the project registry (_gcr.io/bitnami-charts-testing/hello-world-node_), so anyone can download it.
 
 ### Service
 
@@ -145,7 +145,7 @@ Until now, _express_ have to serve both static (images and css) and dynamic cont
 
 To do that, add a __nginx__ container to the pod and do whatever changes are necessary to make that work as expected.
 
-We have already an image for that container prepared at _gcr.io/kubernetes-ws-0/hello-world-nginx_.
+We have already an image for that container prepared at _gcr.io/bitnami-charts-testing/hello-world-nginx_.
 
 Try to figure out what to change on this example to implement it and also try to do that by yourself.
 

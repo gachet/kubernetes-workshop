@@ -7,7 +7,7 @@ The same than [before](../1_first_deploy/README.md#requirements).
 Create a disk:
 
 ```
-gcloud compute disks create <name> --SIZE-100
+gcloud compute disks create <name> --size 100
 ```
 
 ## Description

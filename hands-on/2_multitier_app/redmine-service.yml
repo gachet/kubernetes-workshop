@@ -10,5 +10,6 @@ spec:
     - port: 80
       targetPort: 3000
       protocol: TCP
+      name: mysql
   selector:
     name: redmine

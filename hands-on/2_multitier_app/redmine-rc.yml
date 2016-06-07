@@ -15,24 +15,31 @@ spec:
     spec:
       containers:
         - name: redmine
-          image: gcr.io/kubernetes-ws-0/redmine-basic
+          image: bitnami/redmine:3.2.3-r0
           env:
-            - name: REDMINE_SESSION_TOKEN
-              value: SUPERLONGANDSECRETSESSIONTOKENFORTHISAPP
-            - name: DATABASE_HOST
-              value: <FILL_THIS>
-            - name: DATABASE_NAME
-              value: redmine_production
-            - name: DATABASE_USER
-              value: redmine
-            - name: DATABASE_PASSWORD
-              value: secretpassword
+          - name: MARIADB_HOST
+            value: <FILL_THIS>
+          - name: MARIADB_PASSWORD
+            value: <FILL_THIS>
           ports:
             - containerPort: 3000
               protocol: TCP
+              name: http
           livenessProbe:
             httpGet:
               path: /
-              port: 3000
-            initialDelaySeconds: 60
+              port: <FILL_THIS>
+            initialDelaySeconds: 120
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: <FILL_THIS>
+            initialDelaySeconds: 5
             timeoutSeconds: 1
+          volumeMounts:
+          - name: data
+            mountPath: /bitnami/redmine
+      volumes:
+        - name: data
+          emptyDir: {}

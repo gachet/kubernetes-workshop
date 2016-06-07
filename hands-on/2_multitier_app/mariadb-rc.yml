@@ -10,27 +10,22 @@ spec:
     name: mariadb
   template:
     metadata:
+      name: mariadb
       labels:
         name: mariadb
     spec:
       containers:
         - name: mariadb
-          image: bitnami/mariadb:5.5.46-0-r01
-          args:
-            - --max_connect_errors=1000
+          image: bitnami/mariadb:10.1.14-r0
           env:
-            - name: MARIADB_DATABASE
-              value: redmine_production
-            - name: MARIADB_USER
-              value: redmine
-            - name: MARIADB_PASSWORD
-              value: secretpassword
+          - name: MARIADB_ROOT_PASSWORD
+            value: "secretpassword"
           ports:
-            - containerPort: 3306
-              name: mariadb
+          - containerPort: 3306
+            name: mariadb
           volumeMounts:
             - name: <FILL_THIS>
-              mountPath: /bitnami/mariadb/data
+              mountPath: /bitnami/mariadb
           livenessProbe:
             tcpSocket:
               port: <FILL_THIS>

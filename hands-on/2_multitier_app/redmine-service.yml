@@ -5,10 +5,11 @@ metadata:
   labels:
     app: redmine
 spec:
-  type: <FILL_THIS>
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: <FILL_THIS>
       protocol: TCP
+      name: mysql
   selector:
     name: <FILL_THIS>
